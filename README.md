@@ -2,6 +2,13 @@
 
 A collection of unicorn email address. Please do not spam them.
 
+# Usage:
+
+## Retrieve a list of 10 emails (100 is max) in text format.
+```
+http://localhost:5000/10/txt
+```
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
