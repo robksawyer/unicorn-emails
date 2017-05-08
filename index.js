@@ -48,12 +48,29 @@ function getUnicornEmail(jsonNames, jsonDomains){
   return email;
 }
 
+/**
+ * Handles getting a collection of emails.
+ */
+function getUnicornEmails(total, jsonNames, jsonDomains){
+  var results = [];
+  for(var i = 0; i< total; i++){
+    var tEmail = getUnicornEmail(jsonNames, jsonDomains);
+    results.push(tEmail);
+  }
+
+  return results;
+}
+
 app.get('/', function(req, res) {
-  // Default to 50 emails.
+  // Default to 50 emails and text format.
   var total = 50;
+  var format = 'text';
+  var results = getUnicornEmails(total, jsonNames, jsonDomains);
   res.json({
-    results: 'Test',
+    emails: results,
     meta: {
+      total: total,
+      format: format,
       requestedAt: Date.now()
     }
   });
@@ -82,12 +99,8 @@ app.get('/:total/:format?', function(req, res) {
   }
   console.log('Displaying results as ' + format);
 
-  // This needs to be updated based on the format.
-  var results = [];
-  for(var i = 0; i< total; i++){
-    var tEmail = getUnicornEmail(jsonNames, jsonDomains);
-    results.push(tEmail);
-  }
+  var results = getUnicornEmails(total, jsonNames, jsonDomains);
+
   console.log('Emails created:');
   console.log(results);
   if (format === 'text'){

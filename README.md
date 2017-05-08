@@ -6,7 +6,12 @@ A collection of unicorn email address. Please do not spam them.
 
 ## Retrieve a list of 10 emails (100 is max) in text format.
 ```
-http://localhost:5000/10/txt
+https://unicorn-emails.herokuapp.com/10/txt
+```
+
+## Retrieve a list of 10 emails (100 is max) in json format.
+```
+https://unicorn-emails.herokuapp.com/10/json
 ```
 
 ## Running Locally
