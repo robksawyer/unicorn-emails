@@ -4,6 +4,11 @@ A collection of unicorn email address. Please do not spam them.
 
 # Usage:
 
+## Retrieve a list of 50 emails (100 is max) in json format.
+```
+https://unicorn-emails.herokuapp.com/
+```
+
 ## Retrieve a list of 10 emails (100 is max) in text format.
 ```
 https://unicorn-emails.herokuapp.com/10/txt
